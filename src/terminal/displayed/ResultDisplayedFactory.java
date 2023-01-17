@@ -1,4 +1,4 @@
-package terminal;
+package terminal.displayed;
 
 import terminal.executable.CommandExecutable;
 
@@ -8,6 +8,7 @@ public class ResultDisplayedFactory {
             return new CreateStudentDisplayed(commandExecutable);
         } else if (command.equals("/delete")) {
             return new DeleteStudentDisplayed(commandExecutable);
-        } else return new BadResultDisplayed();
+        } else return new NoneResultDisplayed();
     }
+
 }

@@ -1,9 +1,10 @@
-package terminal;
+package terminal.displayed;
 
-import terminal.executable.BadCommandExecutable;
 import terminal.executable.CommandExecutable;
+import terminal.executable.BadCommandExecutable;
 
 public class CreateStudentDisplayed implements ResultDisplayed {
+
     private final CommandExecutable commandExecutable;
 
     public CreateStudentDisplayed(CommandExecutable commandExecutable) {
@@ -13,9 +14,11 @@ public class CreateStudentDisplayed implements ResultDisplayed {
     @Override
     public void display() {
         if (commandExecutable instanceof BadCommandExecutable) {
-            System.out.println("Ошибка");
+            System.out.println("Неверный ввод. Студент не был создан");
         } else {
-            System.out.println("Студент добавлен");
+            System.out.println("Студент успешно создан");
         }
     }
+
+
 }

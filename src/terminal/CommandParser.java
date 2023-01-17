@@ -1,7 +1,10 @@
 package terminal;
 
+import java.util.Arrays;
+
 public interface CommandParser {
-    static String[] parseCommand(String inputCommand) {
-        return null;
-    }
+
+    default String parseCommand(String inputCommand){
+        return Arrays.stream(inputCommand.split(" ")).toString();
+    };
 }

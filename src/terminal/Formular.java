@@ -10,7 +10,7 @@ public class Formular {
         this.commands = commands;
     }
 
-    private boolean isInput(String str) {
+    private boolean isInt(String str) {
         try {
             Integer.parseInt(str);
             return true;
@@ -18,52 +18,50 @@ public class Formular {
             return false;
         }
     }
-
-
     private String formName() {
-        String fio = null;
+        String name = null;
         for (int i = 1; i < commands.size(); i++) {
-            if (!isInput(commands.get(i)) && commands.size() - i > 2 &&
-                    !isInput(commands.get(i + 1)) && !isInput(commands.get(i + 2))) {
-                fio = String.join(" ", commands.get(i), commands.get(i + 1), commands.get(i + 2));
+            if (!isInt(commands.get(i)) && commands.size() - i > 2 &&
+                    !isInt(commands.get(i + 1)) && !isInt(commands.get(i + 2))) {
+                name = String.join(" ", commands.get(i), commands.get(i + 1), commands.get(i + 2));
                 commands.remove(commands.get(i));
                 commands.remove(commands.get(i + 1));
                 commands.remove(commands.get(i + 2));
                 break;
             }
         }
-        return fio;
+        return name;
     }
 
 
     private Integer formYearOfBirth() {
-        Integer age = null;
+        Integer yearOfBirth = null;
         for (String i : commands) {
-            if (isInput(i) && i.length() == 4) {
-                age = Integer.parseInt(i);
+            if (isInt(i) && i.length() == 4) {
+                yearOfBirth = Integer.parseInt(i);
                 commands.remove(i);
                 break;
             }
         }
-        return age;
+        return yearOfBirth;
     }
 
     private Integer formPassNumber() {
-        Integer passport = null;
+        Integer passNumber = null;
         for (String i : commands) {
-            if (isInput(i) && i.length() == 10) {
-                passport = Integer.parseInt(i);
+            if (isInt(i) && i.length() == 10) {
+                passNumber = Integer.parseInt(i);
                 commands.remove(i);
                 break;
             }
         }
-        return passport;
+        return passNumber;
     }
 
     private Integer formGroupNumber() {
         Integer groupNumber = null;
         for (String i : commands) {
-            if (isInput(i)) {
+            if (isInt(i)) {
                 groupNumber = Integer.parseInt(i);
                 commands.remove(i);
                 break;
@@ -74,12 +72,12 @@ public class Formular {
 
     public Student createStudent() {
         int lengthBefore = commands.size();
-        String fio = formName();
-        int age = formYearOfBirth();
-        int passport = formPassNumber();
-        int groupNumber = formGroupNumber();
+        String name = formName();
+        Integer yearOfBirth = formYearOfBirth();
+        Integer passNumber = formPassNumber();
+        Integer groupNumber = formGroupNumber();
         if (lengthBefore < commands.size())
-            return new Student(fio, age, passport, groupNumber);
+            return new Student(name, yearOfBirth, passNumber, groupNumber);
         else return null;
     }
 }
