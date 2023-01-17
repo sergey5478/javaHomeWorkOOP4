@@ -14,4 +14,7 @@ public class StudentRepository implements UserRepository<Student, Integer>{
     public Student findByFio(String fio) {
         return null;
     }
+    @Override
+    public void delete(Student entity) {
+    }
 }

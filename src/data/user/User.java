@@ -3,15 +3,18 @@ package data.user;
 public abstract class User {
     private String fio;
     private int age;
-    private String passport;
+    private Integer passport;
+    public User(String fio){
+        this.fio = fio;
+    }
 
-    public User(String fio, int age, String passport) {
+    public User(String fio, int age, Integer passport) {
         this.fio = fio;
         this.age = age;
         this.passport = passport;
     }
 
-    public void setFio(String fio) {
+    public void setFio(String fio){
         this.fio = fio;
     }
 
@@ -19,11 +22,11 @@ public abstract class User {
         this.age = age;
     }
 
-    public String getPassport() {
+    public Integer getPassport() {
         return passport;
     }
 
-    public void setPassport(String passport) {
+    public void setPassport(Integer passport) {
         this.passport = passport;
     }
 

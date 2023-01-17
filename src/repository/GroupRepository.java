@@ -8,4 +8,7 @@ public class GroupRepository implements Repository<Group, Integer> {
     public Group findById(Integer id) {
         return null;
     }
+    @Override
+    public void delete(Group entity) {
+    }
 }

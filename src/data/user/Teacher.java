@@ -6,7 +6,7 @@ public class Teacher extends User{
     private String kafedra;
     private List<Integer> groups;
 
-    public Teacher(String fio, int age, String passport, String kafedra, List<Integer> groups) {
+    public Teacher(String fio, int age, Integer passport, String kafedra, List<Integer> groups) {
         super(fio, age, passport);
         this.kafedra = kafedra;
         this.groups = groups;

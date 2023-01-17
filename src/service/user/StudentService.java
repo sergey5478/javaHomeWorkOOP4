@@ -18,7 +18,6 @@ public class StudentService implements DataUserService<Student> {
 
     @Override
     public void write(Student user) {
-
     }
 
     @Override
@@ -44,5 +43,9 @@ public class StudentService implements DataUserService<Student> {
 
     public Student findStudentByFio(String fio) {
         return studentRepository.findByFio(fio);
+    }
+
+    public void deleteStudent(Student student) {
+        studentRepository.delete(student);
     }
 }
