@@ -24,7 +24,7 @@ public class StudentGroup extends UserGroup implements Comparable<StudentGroup> 
     }
 
     @Override
-    public int compareTo(StudentGroup sg) {
-        return Integer.compare(this.groupNumber, sg.groupNumber);
+    public int compareTo(StudentGroup o) {
+        return Integer.compare(this.groupNumber, o.groupNumber);
     }
 }

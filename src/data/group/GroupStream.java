@@ -22,7 +22,7 @@ public class GroupStream implements Iterable<StudentGroup>, Comparable<GroupStre
     }
 
     @Override
-    public int compareTo(GroupStream gst) {
-        return Integer.compare(this.groups.size(), gst.groups.size());
+    public int compareTo(GroupStream o) {
+        return Integer.compare(this.groups.size(), o.groups.size());
     }
 }

@@ -18,6 +18,7 @@ public class StudentService implements DataUserService<Student> {
 
     @Override
     public void write(Student user) {
+
     }
 
     @Override

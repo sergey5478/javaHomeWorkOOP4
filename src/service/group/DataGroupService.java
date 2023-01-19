@@ -1,7 +1,23 @@
 package service.group;
 
 import data.group.Group;
+import repository.GroupRepository;
 
-public interface DataGroupService {
-    Group findById(int id);
+public abstract class DataGroupService {
+
+    private final GroupRepository groupRepository;
+
+    public DataGroupService(GroupRepository groupRepository) {
+        this.groupRepository = groupRepository;
+    }
+
+    public abstract void sort(Group group);
+
+    public void save(Group group) {
+        groupRepository.save(group);
+    }
+
+    public Group findById(int id) {
+        return groupRepository.findById(id);
+    }
 }

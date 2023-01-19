@@ -5,19 +5,19 @@ import data.user.User;
 import java.util.List;
 
 public class TeacherGroup extends UserGroup implements Comparable<TeacherGroup> {
-    private final String kafedra;
+    private final String department;
 
-    public TeacherGroup(List<User> teachers, String kafedra) {
+    public TeacherGroup(List<User> teachers, String department) {
         super(teachers);
-        this.kafedra = kafedra;
+        this.department = department;
     }
 
-    public String getKafedra() {
-        return kafedra;
+    public String getDepartment() {
+        return department;
     }
 
     @Override
-    public int compareTo(TeacherGroup tg) {
-        return Integer.compare(this.getUsers().size(), tg.getUsers().size());
+    public int compareTo(TeacherGroup o) {
+        return Integer.compare(this.getUsers().size(), o.getUsers().size());
     }
 }

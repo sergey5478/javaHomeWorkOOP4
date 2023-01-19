@@ -1,7 +1,7 @@
 package terminal.displayed;
 
-import terminal.executable.CommandExecutable;
-import terminal.executable.BadCommandExecutable;
+import terminal.executable.executables.CommandExecutable;
+import terminal.executable.executables.NoneCommandExecutable;
 
 public class DeleteStudentDisplayed implements ResultDisplayed {
 
@@ -13,8 +13,8 @@ public class DeleteStudentDisplayed implements ResultDisplayed {
 
     @Override
     public void display() {
-        if (commandExecutable instanceof BadCommandExecutable) {
-            System.out.println("Неверный ввод. Студент не был удален");
+        if (commandExecutable instanceof NoneCommandExecutable) {
+            System.out.println("Студент не был удален");
         } else {
             System.out.println("Студент успешно удален");
         }
