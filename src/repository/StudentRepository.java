@@ -1,8 +1,13 @@
 package repository;
 
 import data.user.Student;
+import db.StudentTable;
 
 public class StudentRepository implements UserRepository<Student, Integer> {
+    private StudentTable studentTable;
+
+    public StudentRepository() {
+    }
 
     @Override
     public void save(Student entity) {
@@ -11,7 +16,7 @@ public class StudentRepository implements UserRepository<Student, Integer> {
 
     @Override
     public void delete(Student entity) {
-
+        studentTable.removeByName(entity.getFio());
     }
 
     @Override

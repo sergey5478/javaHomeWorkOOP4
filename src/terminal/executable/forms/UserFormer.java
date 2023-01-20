@@ -19,13 +19,13 @@ public abstract class UserFormer {
     }
     protected String formName() {
         String name = null;
-        for (int i = 0; i < commands.size(); i++) {
-            if (!isInt(commands.get(i)) && commands.size()> 2 &&
+        for (int i = 2; i < commands.size(); i++) {
+            if (!isInt(commands.get(i)) && commands.size() - i > 2 &&
                     !isInt(commands.get(i + 1)) && !isInt(commands.get(i + 2))) {
                 name = String.join(" ", commands.get(i), commands.get(i + 1), commands.get(i + 2));
                 commands.remove(commands.get(i));
-                commands.remove(commands.get(i+1));
-                commands.remove(commands.get(i+2));
+                commands.remove(commands.get(i + 1));
+                commands.remove(commands.get(i + 2));
                 break;
             }
         }

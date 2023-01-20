@@ -26,10 +26,10 @@ public class StudentFormer extends UserFormer {
         int lengthBefore = commands.size();
         String name = formName();
         Integer yearOfBirth = formYearOfBirth();
-        Integer passNumber = formPassNumber();
+        Integer passport = formPassNumber();
         Integer groupNumber = formGroupNumber();
         if (lengthBefore > commands.size()) {
-            return new Student(name, yearOfBirth, passNumber, groupNumber);
+            return new Student(name, yearOfBirth, passport, groupNumber);
         }
 
         return null;

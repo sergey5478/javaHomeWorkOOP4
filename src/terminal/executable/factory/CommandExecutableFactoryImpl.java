@@ -8,6 +8,12 @@ import terminal.executable.forms.StudentFormer;
 import terminal.executable.executables.*;
 
 public class CommandExecutableFactoryImpl implements CommandExecutableFactory {
+    public final StudentService studentService;
+
+    public CommandExecutableFactoryImpl() {
+        studentService = null;
+    }
+
     @Override
     public CommandExecutable create(Command command) {
         Student student = new StudentFormer(command.getCommands()).createUser();

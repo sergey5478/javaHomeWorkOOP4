@@ -3,8 +3,8 @@ package data.user;
 public class Student extends User implements Comparable<Student> {
     private int groupNumber;
 
-    public Student(String fio, Integer yearOfBirth, Integer passportNumber, Integer groupNumber) {
-        super(fio, yearOfBirth, passportNumber);
+    public Student(String fio, Integer yearOfBirth, Integer passport, Integer groupNumber) {
+        super(fio, yearOfBirth, passport);
         this.groupNumber = groupNumber;
     }
 
