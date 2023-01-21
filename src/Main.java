@@ -1,14 +1,11 @@
-import terminal.CommandParser;
+import service.user.StudentService;
 import terminal.TerminalReader;
-import terminal.displayed.ResultDisplayedFactory;
 import terminal.displayed.StudentMenu;
+
 import terminal.executable.factory.LoggingCommandExecutableFactory;
-
-
 public class Main {
     public static void main(String[] args) {
-        new StudentMenu().displayMenu();
-        TerminalReader.getInstance(new CommandParser(),
-                new LoggingCommandExecutableFactory(new ResultDisplayedFactory())).listenToCommands();
+        StudentMenu.displayMenu();
+        TerminalReader.getInstance(new LoggingCommandExecutableFactory(new StudentService())).listenToCommands();
     }
 }

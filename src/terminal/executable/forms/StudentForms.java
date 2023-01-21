@@ -2,14 +2,12 @@ package terminal.executable.forms;
 
 import data.user.Student;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class StudentFormer extends UserFormer {
-
-    public StudentFormer(List<String> commands) {
+public class StudentForms extends UserForms {
+    public StudentForms(ArrayList<String> commands) {
         super(commands);
     }
-
     private Integer formGroupNumber() {
         Integer groupNumber = null;
         for (String i : commands) {
@@ -28,10 +26,8 @@ public class StudentFormer extends UserFormer {
         Integer yearOfBirth = formYearOfBirth();
         Integer passport = formPassNumber();
         Integer groupNumber = formGroupNumber();
-        if (lengthBefore > commands.size()) {
+        if (lengthBefore > commands.size())
             return new Student(name, yearOfBirth, passport, groupNumber);
-        }
-
-        return null;
+        else return null;
     }
 }

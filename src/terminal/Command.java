@@ -1,20 +1,17 @@
 package terminal;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import java.util.ArrayList;
 public class Command {
     private static final String ADD = "/add";
     private static final String DELETE = "/delete";
-    private final List<String> commands;
+    private static final String STUDENT = "/student";
+    private final ArrayList<String> commands;
     private final String mainCommand;
 
-    public Command(String input) {
-        this.commands = Arrays.stream(input.split(" ")).collect(Collectors.toList());
+    public Command(ArrayList<String> commands) {
+        this.commands = commands;
         this.mainCommand = commands.get(0);
     }
-    public List<String> getCommands() {
+    public ArrayList<String> getCommands() {
         return commands;
     }
     public String getMainCommand() {
@@ -25,6 +22,9 @@ public class Command {
     }
     public boolean isDeleteCommand() {
         return commands.get(0).equals(DELETE);
+    }
+    public boolean isStudentCommand() {
+        return commands.size() > 1 && commands.get(1).equals(STUDENT);
     }
     @Override
     public String toString() {

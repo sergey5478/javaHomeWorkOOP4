@@ -1,25 +1,28 @@
 package data.user;
 
 public abstract class User {
-    private String fio;
-    private final int age;
-    private final int passport;
+    protected final String fio;
+    protected final Integer yearOfBirth;
+    protected final Integer passportNumber;
 
-    public User(String fio, Integer age, Integer passport) {
+    protected User(String fio, Integer yearOfBirth, Integer passportNumber) {
         this.fio = fio;
-        this.age = age;
-        this.passport = passport;
+        this.yearOfBirth = yearOfBirth;
+        this.passportNumber = passportNumber;
     }
 
     public String getFio() {
         return fio;
     }
 
-    public int getAge() {
-        return age;
+    public int getYearOfBirth() {
+        return yearOfBirth;
     }
 
-    public int getPassport() {
-        return passport;
+    public int getPassportNumber() {
+        return passportNumber;
     }
+
+    @Override
+    public abstract String toString();
 }

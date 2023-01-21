@@ -1,17 +1,16 @@
 package db;
-
 import java.util.ArrayList;
-import java.util.List;
-
-public abstract class Table<E>{
-    List<E> elements;
-
+public abstract class Table<E> {
+    protected ArrayList<E> elements;
     protected Table() {
-        elements = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
-    public E save(E entity) {
-        elements.add(entity);
+    public E save (E entity){
+        this.elements.add(entity);
         return entity;
+    }
+    public ArrayList<E> getElements() {
+        return elements;
     }
 }
