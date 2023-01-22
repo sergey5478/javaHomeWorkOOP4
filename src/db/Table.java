@@ -5,12 +5,10 @@ public abstract class Table<E> {
     protected Table() {
         this.elements = new ArrayList<>();
     }
-
     public E save (E entity){
         this.elements.add(entity);
         return entity;
-    }
-    public ArrayList<E> getElements() {
+    }    public ArrayList<E> getElements() {
         return elements;
     }
 }

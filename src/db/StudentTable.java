@@ -1,7 +1,6 @@
 package db;
 
 import data.user.Student;
-
 public class StudentTable extends Table<Student>{
     public boolean deleteByFio(String fio){
         for (Student student : elements) {
